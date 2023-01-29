@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const NavbarStyled = styled.nav`
     height: 16vh;
+    width: 100%;
     color: #fff;
     display: flex;
     justify-content: space-between;

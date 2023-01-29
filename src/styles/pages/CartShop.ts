@@ -9,7 +9,7 @@ export const ModalCart = styled.div`
     background: ${props => props.theme.colors.primary};
 `
 
-export const TitleCart = styled.h2`
+export const TitleCart = styled.span`
     width: 60%;
     font-size: 1.7rem;
     font-weight: 700;
