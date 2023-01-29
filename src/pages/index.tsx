@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Navbar from 'components/Navbar'
 import Products from 'components/Products'
+import Footer from 'components/Footer'
 import { store } from './api/store'
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
             <main>
                 <Navbar />
                 <Products />
+                <Footer />
             </main>
         </>
     )

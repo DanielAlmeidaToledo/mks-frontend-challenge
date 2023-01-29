@@ -3,7 +3,7 @@ import { productsReducer } from './reducer'
 
 export const store = configureStore({
     reducer: {
-        products: productsReducer
+        data: productsReducer
     }
 })
 

@@ -2,13 +2,38 @@ import { createReducer } from '@reduxjs/toolkit'
 import { getProducts } from './actions'
 
 export type productState = {
-    data: any
+    data: {
+        products: {
+            id: number
+            name: string
+            brand: string
+            description: string
+            photo: string
+            price: number
+            createdAt: string
+            updatedAt: string
+        }
+        count: number
+    }
+
     pending: boolean
     error: boolean
 }
 
 const initialState: productState = {
-    data: {},
+    data: {
+        products: {
+            id: 0,
+            name: '',
+            brand: '',
+            description: '',
+            photo: '',
+            price: 0,
+            createdAt: '',
+            updatedAt: ''
+        },
+        count: 0
+    },
     pending: false,
     error: false
 }
