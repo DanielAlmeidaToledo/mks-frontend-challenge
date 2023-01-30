@@ -31,6 +31,128 @@ export const ButtonClose = styled.div`
     justify-content: center;
 `
 
+export const ItemsHeight = styled.div`
+    height: 55vh;
+    overflow-y: auto;
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        background-color: #000;
+    }
+
+    .cartEmpty {
+        color: #fff;
+        font-size: 1.3rem;
+        min-height: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`
+
+export const ItemCart = styled.div`
+    width: 90%;
+    height: 5rem;
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+    display: flex;
+    background: #fff;
+    box-shadow: -2px 2px 10px 0px #0000000d;
+
+    img {
+        height: 80%;
+        width: 20%;
+        margin: auto 0 auto 0.5rem;
+    }
+
+    h3 {
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #2c2c2c;
+        width: 27%;
+        margin: auto 0 auto 0.5rem;
+    }
+
+    div {
+        height: 30%;
+        border-radius: 0.25rem;
+        border: 0.3px solid #bfbfbf;
+        margin: auto 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    span {
+        margin: auto 0.3rem;
+        font-size: 0.6rem;
+        color: #000;
+        font-weight: 400;
+    }
+
+    button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .btn-remove {
+        border-right: 0.3px solid #bfbfbf;
+    }
+
+    .btn-add {
+        border-left: 0.3px solid #bfbfbf;
+    }
+
+    p {
+        display: flex;
+        width: 30%;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #000;
+        margin-left: 1rem;
+    }
+
+    .btn-delete {
+        position: relative;
+        inset: auto auto 0.5rem 0.5rem;
+        background: #000;
+        color: #fff;
+        font-size: 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.6rem;
+        border-radius: 50%;
+    }
+`
+
+export const TotalValue = styled.div`
+    width: 80%;
+    height: 5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    position: absolute;
+    inset: auto 0 5rem 0;
+`
+
 export const ButtonFinish = styled.button`
     width: 100%;
     height: 5rem;

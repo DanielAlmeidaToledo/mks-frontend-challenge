@@ -4,6 +4,9 @@ import {
     ModalCart,
     ButtonClose,
     TitleCart,
+    ItemCart,
+    ItemsHeight,
+    TotalValue,
     ButtonFinish
 } from '@/styles/pages/CartShop'
 import {
@@ -69,26 +72,54 @@ export default function CartShop({ open, handleClose }: cartShopProps) {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        {cart.items.length === 0 ? (
-                            <div>Carrinho vazio</div>
-                        ) : (
-                            cart.items.map((item: ItemProps) => (
-                                <div key={item.id}>
-                                    <h3>{item.name}</h3>
-                                    <p>Quantidade: {item.cartQuantity}</p>
-                                    <p>Quantidade: {item.price}</p>
-                                    <button
-                                        onClick={() => handleAddToCart(item)}
-                                    ></button>
+                        <ItemsHeight>
+                            {cart.items.length === 0 ? (
+                                <div className="cartEmpty">
+                                    Carrinho vazio :(
                                 </div>
-                            ))
-                        )}
-                        <span>
-                            {cartTotalAmount.toLocaleString('pt-br', {
-                                style: 'currency',
-                                currency: 'BRL'
-                            })}
-                        </span>
+                            ) : (
+                                cart.items.map((item: ItemProps) => (
+                                    <ItemCart key={item.id}>
+                                        <img src={item.photo} alt="" />
+                                        <h3>{item.name}</h3>
+                                        <div>
+                                            <button
+                                                className="btn-remove"
+                                                onClick={() =>
+                                                    handleDecreaseCart(item)
+                                                }
+                                            >
+                                                -
+                                            </button>
+                                            <span>{item.cartQuantity}</span>
+                                            <button
+                                                className="btn-add"
+                                                onClick={() =>
+                                                    handleAddToCart(item)
+                                                }
+                                            >
+                                                +
+                                            </button>
+                                        </div>
+                                        <p>
+                                            R${item.price * item.cartQuantity}
+                                        </p>
+                                        <button
+                                            className="btn-delete"
+                                            onClick={() =>
+                                                handleRemoveFromCart(item)
+                                            }
+                                        >
+                                            X
+                                        </button>
+                                    </ItemCart>
+                                ))
+                            )}
+                        </ItemsHeight>
+                        <TotalValue>
+                            <span>Total:</span>
+                            <span>R${cartTotalAmount}</span>
+                        </TotalValue>
                     </DialogContentText>
                 </DialogContent>
                 <ButtonFinish onClick={handleClose}>

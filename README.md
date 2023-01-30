@@ -1,4 +1,20 @@
-Diretrizes do desafio
+Desafio técnico - Front-end
+===========================
+### ⚙️ Linguagens e Ferramentas utilizadas:
+
+- Next.JS
+- React.JS
+- Typescipt
+- Redux Toolkit
+- Styled-components
+- Jest
+- Vercel
+- MUI
+- Eslint
+- Prettier
+- Vite
+
+Diretrizes do desafio - Passo a Passo
 ===========================
 
 O objetivo principal desse teste é avaliar sua capacidade de escrever código limpo, bem testado e reutilizável. Ao terminar, faça o deploy da aplicação e mande-nos o link.
@@ -11,7 +27,7 @@ Para esse desafio, você deve consumir nossa [API REST de produtos](https://mks-
 A aplicação deve conter apenas uma página/rota e um carrinho.
 
 - <b>Loja</b>: A lista de produtos deve ser buscada de nossa API, use um shimmer/skeleton enquanto estiver em loading.
- 
+
 - <b>Carrinho</b>: O carrinho deve conter todos os produtos selecionados, juntamente com a opção de aumentar a quantidade de cada produto selecionado.
 
 Use do Jest e a testing-library para realizar os testes unitários.
