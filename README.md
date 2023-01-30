@@ -1,4 +1,20 @@
-Diretrizes do desafio
+Desafio técnico - Front-end
+===========================
+### ⚙️ Linguagens e Ferramentas utilizadas:
+
+- Next.JS
+- React.JS
+- Typescipt
+- Redux Toolkit
+- Styled-components
+- Jest
+- Vercel
+- MUI
+- Eslint
+- Prettier
+- Vite
+
+Diretrizes do desafio - Passo a Passo
 ===========================
 
 O objetivo principal desse teste é avaliar sua capacidade de escrever código limpo, bem testado e reutilizável. Ao terminar, faça o deploy da aplicação e mande-nos o link.
