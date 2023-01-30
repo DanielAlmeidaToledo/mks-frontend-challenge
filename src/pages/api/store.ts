@@ -1,9 +1,11 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit'
 import { productsReducer } from './reducer'
+import cartReducer, { getTotals } from './cartSlice'
 
 export const store = configureStore({
     reducer: {
-        data: productsReducer
+        data: productsReducer,
+        cart: cartReducer
     }
 })
 

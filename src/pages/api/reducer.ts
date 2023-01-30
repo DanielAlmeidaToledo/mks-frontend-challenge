@@ -15,7 +15,6 @@ export type productState = {
         }
         count: number
     }
-
     pending: boolean
     error: boolean
 }

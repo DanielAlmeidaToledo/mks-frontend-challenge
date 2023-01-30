@@ -81,6 +81,9 @@ export const ItemStyled = styled.div`
         align-items: center;
         justify-content: center;
         border-radius: 0 0 0.5rem 0.5rem;
+
+        & :nth-child(1) {
+            margin-right: .5rem
     }
 `
 

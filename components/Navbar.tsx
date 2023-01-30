@@ -1,12 +1,14 @@
 import { Logo, NavbarStyled, ButtonCart } from '@/styles/pages/Navbar'
-import CartShop from './CartShop'
+import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import Image from 'next/image'
+import CartShop from './CartShop'
 
 import Button from '@mui/material/Button'
+import { RootState } from '@/pages/api/store'
 
 export default function Navbar() {
-    const [cart, setCart] = useState(0)
+    const { cartTotalQuantity } = useSelector((state: RootState) => state.cart)
     const [open, setOpen] = useState(false)
 
     const handleClickOpen = () => {
@@ -33,7 +35,7 @@ export default function Navbar() {
                         width="20"
                         height="20"
                     />
-                    <span>{cart}</span>
+                    <span>{cartTotalQuantity}</span>
                 </Button>
             </ButtonCart>
             <CartShop open={open} handleClose={handleClose} />
