@@ -45,7 +45,12 @@ export default function Products({ handleClickOpen }: ProductsProps) {
         <ProductsStyled>
             {pending &&
                 Array.from({ length: 8 }).map((_, index) => (
-                    <Skeleton variant="rounded" width={240} height={340} />
+                    <Skeleton
+                        key={index}
+                        variant="rounded"
+                        width={240}
+                        height={340}
+                    />
                 ))}
 
             {data &&
