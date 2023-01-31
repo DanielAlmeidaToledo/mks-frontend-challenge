@@ -194,7 +194,7 @@ export const ItemCart = styled.div`
         border-radius: 50%;
 
         @media only screen and (max-width: 768px) {
-            inset: auto auto 10rem 2.7rem;
+            inset: auto auto 12.5rem 14.5rem;
             background: none;
             color: #000;
             font-size: 1.6rem;
