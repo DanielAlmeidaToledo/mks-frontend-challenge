@@ -222,6 +222,7 @@ export const ButtonFinish = styled.button`
     width: 100%;
     height: 5rem;
     display: flex;
+    border: none;
     align-items: center;
     justify-content: center;
     position: absolute;
