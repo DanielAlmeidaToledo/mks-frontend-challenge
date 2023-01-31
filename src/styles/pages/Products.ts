@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const ProductsStyled = styled.div`
-    width: 60vw;
-    min-height: 60vh;
+    width: 80vw;
+    min-height: 70vh;
     margin: 0 auto;
     margin-top: 1rem;
     display: grid;
@@ -12,10 +12,15 @@ export const ProductsStyled = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+
+    @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+        width: 80vw;
+    }
 `
 
 export const ItemStyled = styled.div`
-    width: 16rem;
+    width: 18vw;
     height: 21rem;
     background: #ffffff;
     box-shadow: 0px 2px 8px 0px #00000022;
@@ -24,8 +29,7 @@ export const ItemStyled = styled.div`
 
     img {
         width: 70%;
-        min-height: 60%;
-        height: auto;
+        height: 12rem;
         display: flex;
         margin: 0.3rem auto;
     }
@@ -62,7 +66,7 @@ export const ItemStyled = styled.div`
     p {
         font-size: 0.6rem;
         color: #2c2c2c;
-        height: 2.5rem;
+        height: 3rem;
         width: 90%;
         display: flex;
         margin: 0.3rem auto 0.5rem;
@@ -82,8 +86,21 @@ export const ItemStyled = styled.div`
         justify-content: center;
         border-radius: 0 0 0.5rem 0.5rem;
 
+        @media only screen and (max-width: 768px) {
+            height: 3rem;
+            font-size: 1rem;
+        }
+
         & :nth-child(1) {
-            margin-right: .5rem
+            margin-right: 0.5rem;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        width: 70vw;
+        height: 21.8rem;
+        overflow: hidden;
+        margin: 0.7rem auto 0;
     }
 `
 

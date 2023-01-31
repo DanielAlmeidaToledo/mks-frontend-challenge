@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const FooterStyled = styled.footer`
+    width: 100%;
     height: 5vh;
     margin-top: 2rem;
     background: #eeeeee;
@@ -10,4 +11,6 @@ export const FooterStyled = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: static;
+    inset: auto 0 0 0;
 `

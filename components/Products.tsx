@@ -5,7 +5,9 @@ import { getProducts } from '../src/pages/api/actions'
 import { ProductsStyled, ItemStyled } from '@/styles/pages/Products'
 import { FiShoppingBag } from 'react-icons/fi'
 import { addToCart } from '@/pages/api/cartSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import Skeleton from '@mui/material/Skeleton'
+import Stack from '@mui/material/Stack'
 
 export interface ItemProps {
     id: number
@@ -17,7 +19,11 @@ export interface ItemProps {
     cartQuantity: number
 }
 
-export default function Products() {
+interface ProductsProps {
+    handleClickOpen: () => void
+}
+
+export default function Products({ handleClickOpen }: ProductsProps) {
     const history = useDispatch()
     const dispatch = useAppDispatch()
     const { data, pending, error } = useAppSelector(productsSelector)
@@ -30,9 +36,22 @@ export default function Products() {
         dispatch(addToCart(product))
     }
 
+    const handleButton = (item: ItemProps) => {
+        handleAddToCart(item)
+        handleClickOpen()
+    }
+
+    function handleSkeleton() {
+        return (
+            <Stack spacing={5}>
+                <Skeleton variant="rounded" width={250} height={320} />
+            </Stack>
+        )
+    }
+
     return (
         <ProductsStyled>
-            {pending && <p>Loading...</p>}
+            {pending && handleSkeleton()}
 
             {data &&
                 data.products instanceof Array &&
@@ -49,7 +68,7 @@ export default function Products() {
                                 <span>R${item.price / 1}</span>
                             </div>
                             <p>{item.description}</p>
-                            <button onClick={() => handleAddToCart(item)}>
+                            <button onClick={() => handleButton(item)}>
                                 <FiShoppingBag size={20} color="#fff" />
                                 COMPRAR
                             </button>

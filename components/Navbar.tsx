@@ -7,17 +7,18 @@ import CartShop from './CartShop'
 import Button from '@mui/material/Button'
 import { RootState } from '@/pages/api/store'
 
-export default function Navbar() {
+interface NavbarProps {
+    open: boolean
+    handleClickOpen: () => void
+    handleClose: () => void
+}
+
+export default function Navbar({
+    open,
+    handleClickOpen,
+    handleClose
+}: NavbarProps) {
     const { cartTotalQuantity } = useSelector((state: RootState) => state.cart)
-    const [open, setOpen] = useState(false)
-
-    const handleClickOpen = () => {
-        setOpen(true)
-    }
-
-    const handleClose = () => {
-        setOpen(false)
-    }
 
     return (
         <NavbarStyled>

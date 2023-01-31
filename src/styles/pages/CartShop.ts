@@ -7,6 +7,10 @@ export const ModalCart = styled.div`
     inset: 0 0 auto auto;
     box-shadow: -5px 0px 6px 0px #00000021;
     background: ${props => props.theme.colors.primary};
+
+    @media only screen and (max-width: 768px) {
+        width: 90vw;
+    }
 `
 
 export const TitleCart = styled.span`
@@ -58,6 +62,10 @@ export const ItemsHeight = styled.div`
         align-items: center;
         justify-content: center;
     }
+
+    @media only screen and (max-width: 768px) {
+        height: 60vh;
+    }
 `
 
 export const ItemCart = styled.div`
@@ -69,10 +77,21 @@ export const ItemCart = styled.div`
     background: #fff;
     box-shadow: -2px 2px 10px 0px #0000000d;
 
+    @media only screen and (max-width: 768px) {
+        height: auto;
+        flex-wrap: wrap;
+    }
+
     img {
         height: 80%;
         width: 20%;
         margin: auto 0 auto 0.5rem;
+
+        @media only screen and (max-width: 768px) {
+            width: 40%;
+            height: 70%;
+            margin: 1rem auto 0.5rem;
+        }
     }
 
     h3 {
@@ -81,6 +100,12 @@ export const ItemCart = styled.div`
         color: #2c2c2c;
         width: 27%;
         margin: auto 0 auto 0.5rem;
+
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
     }
 
     div {
@@ -90,6 +115,13 @@ export const ItemCart = styled.div`
         margin: auto 0.5rem;
         display: flex;
         align-items: center;
+
+        @media only screen and (max-width: 768px) {
+            height: 40%;
+            margin: auto 2rem 1rem;
+            display: flex;
+            align-items: center;
+        }
     }
 
     span {
@@ -97,6 +129,14 @@ export const ItemCart = styled.div`
         font-size: 0.6rem;
         color: #000;
         font-weight: 400;
+        text-align: center;
+
+        @media only screen and (max-width: 768px) {
+            width: 1.5rem;
+            font-size: 1rem;
+            color: #000;
+            font-weight: 400;
+        }
     }
 
     button {
@@ -105,6 +145,12 @@ export const ItemCart = styled.div`
         cursor: pointer;
         width: 1rem;
         height: 1rem;
+
+        @media only screen and (max-width: 768px) {
+            width: 1.7rem;
+            height: 2rem;
+            font-size: 1.3rem;
+        }
     }
 
     .btn-remove {
@@ -123,6 +169,16 @@ export const ItemCart = styled.div`
         font-weight: 700;
         color: #000;
         margin-left: 1rem;
+
+        @media only screen and (max-width: 768px) {
+            background: #373737;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.2rem;
+            border-radius: 0.5rem;
+        }
     }
 
     .btn-delete {
@@ -136,6 +192,15 @@ export const ItemCart = styled.div`
         justify-content: center;
         padding: 0.6rem;
         border-radius: 50%;
+
+        @media only screen and (max-width: 768px) {
+            inset: auto auto 10rem 2.7rem;
+            background: none;
+            color: #000;
+            font-size: 1.6rem;
+            font-weight: 500;
+            overflow: hidden;
+        }
     }
 `
 

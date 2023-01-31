@@ -16,6 +16,16 @@ export interface CartProps {
 }
 
 export default function Home() {
+    const [open, setOpen] = useState(false)
+
+    const handleClickOpen = () => {
+        setOpen(true)
+    }
+
+    const handleClose = () => {
+        setOpen(false)
+    }
+
     return (
         <>
             <Head>
@@ -27,8 +37,12 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <Navbar />
-                <Products />
+                <Navbar
+                    open={open}
+                    handleClickOpen={handleClickOpen}
+                    handleClose={handleClose}
+                />
+                <Products handleClickOpen={handleClickOpen} />
                 <Footer />
             </main>
         </>

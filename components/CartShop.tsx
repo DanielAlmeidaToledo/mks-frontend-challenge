@@ -71,56 +71,52 @@ export default function CartShop({ open, handleClose }: cartShopProps) {
                     <TitleCart>Carrinho de compras</TitleCart>
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        <ItemsHeight>
-                            {cart.items.length === 0 ? (
-                                <div className="cartEmpty">
-                                    Carrinho vazio :(
-                                </div>
-                            ) : (
-                                cart.items.map((item: ItemProps) => (
-                                    <ItemCart key={item.id}>
-                                        <img src={item.photo} alt="" />
-                                        <h3>{item.name}</h3>
-                                        <div>
-                                            <button
-                                                className="btn-remove"
-                                                onClick={() =>
-                                                    handleDecreaseCart(item)
-                                                }
-                                            >
-                                                -
-                                            </button>
-                                            <span>{item.cartQuantity}</span>
-                                            <button
-                                                className="btn-add"
-                                                onClick={() =>
-                                                    handleAddToCart(item)
-                                                }
-                                            >
-                                                +
-                                            </button>
-                                        </div>
-                                        <p>
-                                            R${item.price * item.cartQuantity}
-                                        </p>
+                    <ItemsHeight>
+                        {cart.items.length === 0 ? (
+                            <div className="cartEmpty">Carrinho vazio :(</div>
+                        ) : (
+                            cart.items.map((item: ItemProps) => (
+                                <ItemCart key={item.id}>
+                                    <img src={item.photo} alt="" />
+                                    <h3>{item.name}</h3>
+                                    <div>
                                         <button
-                                            className="btn-delete"
+                                            className="btn-remove"
                                             onClick={() =>
-                                                handleRemoveFromCart(item)
+                                                handleDecreaseCart(item)
                                             }
                                         >
-                                            X
+                                            -
                                         </button>
-                                    </ItemCart>
-                                ))
-                            )}
-                        </ItemsHeight>
+                                        <span>{item.cartQuantity}</span>
+                                        <button
+                                            className="btn-add"
+                                            onClick={() =>
+                                                handleAddToCart(item)
+                                            }
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                    <p>R${item.price * item.cartQuantity}</p>
+                                    <button
+                                        className="btn-delete"
+                                        onClick={() =>
+                                            handleRemoveFromCart(item)
+                                        }
+                                    >
+                                        X
+                                    </button>
+                                </ItemCart>
+                            ))
+                        )}
+                    </ItemsHeight>
+                    {cart.items.length > 0 && (
                         <TotalValue>
                             <span>Total:</span>
                             <span>R${cartTotalAmount}</span>
                         </TotalValue>
-                    </DialogContentText>
+                    )}
                 </DialogContent>
                 <ButtonFinish onClick={handleClose}>
                     Finalizar Compra
