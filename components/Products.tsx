@@ -41,17 +41,12 @@ export default function Products({ handleClickOpen }: ProductsProps) {
         handleClickOpen()
     }
 
-    function handleSkeleton() {
-        return (
-            <Stack spacing={5}>
-                <Skeleton variant="rounded" width={250} height={320} />
-            </Stack>
-        )
-    }
-
     return (
         <ProductsStyled>
-            {pending && handleSkeleton()}
+            {pending &&
+                Array.from({ length: 8 }).map((_, index) => (
+                    <Skeleton variant="rounded" width={240} height={340} />
+                ))}
 
             {data &&
                 data.products instanceof Array &&
